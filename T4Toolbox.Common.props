@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
@@ -19,4 +25,16 @@
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)\T4Toolbox.snk</AssemblyOriginatorKeyFile>
     <DefineConstants>$(DefineConstants);SIGN_ASSEMBLY</DefineConstants>
   </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <Reference>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <!-- 
+        Set "Copy Local" assembly references to False by default. 
+        This avoids unnecessary copying of SDK assemblies to build output and 
+        prevents inclusion of unnecessary .dll files in the .vsix.
+      -->
+      <Private>False</Private>
+    </Reference>
+  </ItemDefinitionGroup>
 </Project>
