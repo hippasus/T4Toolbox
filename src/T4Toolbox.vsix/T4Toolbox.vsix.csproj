@@ -26,7 +26,6 @@
     <ProjectReference Include="..\T4Toolbox.DirectiveProcessors\T4Toolbox.DirectiveProcessors.csproj" />
     <ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
     <ProjectReference Include="..\T4Toolbox.VisualStudio.Editor\T4Toolbox.VisualStudio.Editor.csproj" />
-    <ProjectReference Include="..\T4Toolbox.VisualStudio.ItemTemplates\T4Toolbox.VisualStudio.ItemTemplates.csproj" />
     <ProjectReference Include="..\T4Toolbox.VisualStudio\T4Toolbox.VisualStudio.csproj" />
     <ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
   </ItemGroup>
