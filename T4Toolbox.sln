@@ -54,8 +54,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T4Toolbox.VisualStudio.Edit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T4Toolbox.VisualStudio.Editor.Tests", "test\T4Toolbox.VisualStudio.Editor.Tests\T4Toolbox.VisualStudio.Editor.Tests.csproj", "{E8BB5F81-8B2B-4DD4-BAAF-A22C26183F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSIXProject1", "VSIXProject1\VSIXProject1.csproj", "{DB822202-BB58-4D62-BBD5-6A577158ACDD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Toolbox.vsix", "src\T4Toolbox.vsix\T4Toolbox.vsix.csproj", "{8E492B04-AF03-4A88-9A5D-D34D2386A4E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Toolbox.VisualStudio.ItemTemplates", "src\T4Toolbox.VisualStudio.ItemTemplates\T4Toolbox.VisualStudio.ItemTemplates.csproj", "{EA04B345-97BE-4A49-9C9C-3EBD4F5D2250}"
@@ -106,10 +104,6 @@ Global
 		{E8BB5F81-8B2B-4DD4-BAAF-A22C26183F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8BB5F81-8B2B-4DD4-BAAF-A22C26183F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8BB5F81-8B2B-4DD4-BAAF-A22C26183F41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB822202-BB58-4D62-BBD5-6A577158ACDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB822202-BB58-4D62-BBD5-6A577158ACDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB822202-BB58-4D62-BBD5-6A577158ACDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB822202-BB58-4D62-BBD5-6A577158ACDD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E492B04-AF03-4A88-9A5D-D34D2386A4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E492B04-AF03-4A88-9A5D-D34D2386A4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E492B04-AF03-4A88-9A5D-D34D2386A4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
