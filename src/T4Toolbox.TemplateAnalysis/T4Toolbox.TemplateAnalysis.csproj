@@ -28,7 +28,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="16.10.230" />
-		<PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
+		<PackageReference Include="StyleCop.MSBuild" Version="6.2.0">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="YaccLexTools" Version="0.2.2" />

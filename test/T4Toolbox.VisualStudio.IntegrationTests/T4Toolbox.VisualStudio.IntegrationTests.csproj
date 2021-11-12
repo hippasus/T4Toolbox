@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<Import Project="..\T4Toolbox.Tests.props" />
 	<ItemGroup>
-		<PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
+		<PackageReference Include="StyleCop.MSBuild" Version="6.2.0">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
-		<PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-		<PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="EnvDTE90" Version="16.10.31320.204" />
-		<PackageReference Include="Microsoft.Build" Version="16.10.0" />
+		<PackageReference Include="Microsoft.Build" Version="17.0.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="16.10.31321.278" />
 		<PackageReference Include="Microsoft.VisualStudio.Shell.Framework" Version="16.10.31321.278" />
 		<PackageReference Include="Microsoft.VisualStudio.TemplateWizardInterface" Version="16.10.31320.204" />
