@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<YaccLexTools>%USERPROFILE%\.nuget\packages\YaccLexTools.0.2.2\tools\</YaccLexTools>
+		<YaccLexTools>%USERPROFILE%\.nuget\packages\yacclextools\0.2.2\tools\</YaccLexTools>
 		<GplexTool>"$(YaccLexTools)gplex.exe"</GplexTool>
 		<GppgTool>"$(YaccLexTools)gppg.exe"</GppgTool>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
 	<Import Project="..\..\T4Toolbox.Common.props" />
+
 	<Target Name="GenerateScanners" Inputs="@(Lex)" Outputs="$(IntermediateOutputPath)%(Filename).g.lex.cs" BeforeTargets="CoreCompile">
 		<Exec Command="echo #pragma warning disable 1591 &gt; &quot;$(IntermediateOutputPath)%(Lex.Filename).g.lex.cs&quot;" WorkingDirectory="$(ProjectDir)" />
 		<Exec Command="$(GplexTool) &quot;/out:-&quot; &quot;%(Lex.FullPath)&quot; &gt;&gt; &quot;$(IntermediateOutputPath)%(Lex.Filename).g.lex.cs&quot;" WorkingDirectory="$(ProjectDir)" />
@@ -24,6 +25,7 @@
 			</Compile>
 		</ItemGroup>
 	</Target>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="16.10.230" />
 		<PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
@@ -43,4 +45,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<Yacc Include="TemplateParser.y" />
+		<Lex Include="TemplateScanner.lex" />
+	</ItemGroup>
+
 </Project>
