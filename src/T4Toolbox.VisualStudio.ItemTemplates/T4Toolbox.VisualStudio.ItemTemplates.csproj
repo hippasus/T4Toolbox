@@ -1,5 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\T4Toolbox.Common.props" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{EA04B345-97BE-4A49-9C9C-3EBD4F5D2250}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <!-- Suppress C# warning about missing source files -->
     <NoWarn>2008</NoWarn>
     <!-- Disable FxCop. This project does not generate an assembly. -->
@@ -15,25 +21,63 @@
     <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
     <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
     <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <RuntimeIdentifier>win</RuntimeIdentifier>
   </PropertyGroup>
-  <Import Project="..\..\T4Toolbox.Common.props" />
-  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StyleCopEnabled>false</StyleCopEnabled>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <VSTemplate>
+      <OutputSubPath>T4 Toolbox</OutputSubPath>
+    </VSTemplate>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="C#\Generator\Generator.tt" />
+    <VSTemplate Include="C#\Generator\Generator.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C#\Script\Script.tt" />
+    <VSTemplate Include="C#\Script\Script.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C#\Template\Template.tt" />
+    <VSTemplate Include="C#\Template\Template.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VB\Generator\Generator.tt" />
+    <VSTemplate Include="VB\Generator\Generator.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VB\Script\Script.tt" />
+    <VSTemplate Include="VB\Script\Script.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VB\Template\Template.tt" />
+    <VSTemplate Include="VB\Template\Template.vstemplate" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
