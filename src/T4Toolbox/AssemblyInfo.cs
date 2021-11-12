@@ -6,7 +6,6 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyTitle(T4Toolbox.AssemblyInfo.Name)]
 [assembly: CLSCompliant(true)]
 
 namespace T4Toolbox

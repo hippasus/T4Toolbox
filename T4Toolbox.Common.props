@@ -1,28 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <FileAlignment>512</FileAlignment>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)\T4Toolbox.Common.ruleset</CodeAnalysisRuleSet>
-    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
-  </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
@@ -42,17 +19,4 @@
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)\T4Toolbox.snk</AssemblyOriginatorKeyFile>
     <DefineConstants>$(DefineConstants);SIGN_ASSEMBLY</DefineConstants>
   </PropertyGroup>
-
-
-  <ItemDefinitionGroup>
-    <Reference>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <!-- 
-        Set "Copy Local" assembly references to False by default. 
-        This avoids unnecessary copying of SDK assemblies to build output and 
-        prevents inclusion of unnecessary .dll files in the .vsix.
-      -->
-      <Private>False</Private>
-    </Reference>
-  </ItemDefinitionGroup>
 </Project>

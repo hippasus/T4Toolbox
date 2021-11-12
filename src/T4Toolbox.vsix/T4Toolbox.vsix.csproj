@@ -1,11 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\T4Toolbox.Common.props" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{8E492B04-AF03-4A88-9A5D-D34D2386A4E5}</ProjectGuid>
-    <OutputType>Library</OutputType>
     <!-- On AppVeyor build agent, use dynamically generated package version. Locally, hardcode to 0.0.0.0 -->
     <PackageVersion Condition=" '$(appveyor_build_version)' != '' ">$(appveyor_build_version)</PackageVersion>
     <PackageVersion Condition=" '$(appveyor_build_version)' == '' ">0.0.0.0</PackageVersion>
@@ -24,42 +19,16 @@
     <!-- Disable FxCop - no assembly -->
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <Import Project="..\..\T4Toolbox.Common.props" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" />
+  <Target Name="GetPackageVersion" Outputs="$(PackageVersion)" />
   <ItemGroup>
-    <ProjectReference Include="..\T4Toolbox.DirectiveProcessors\T4Toolbox.DirectiveProcessors.csproj">
-      <Project>{e0282961-2d83-48cc-b4d4-8257449cf8f7}</Project>
-      <Name>T4Toolbox.DirectiveProcessors</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-    <ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj">
-      <Project>{65bf3fa7-6b2b-47dd-8fc1-bb25754f12d3}</Project>
-      <Name>T4Toolbox.TemplateAnalysis</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-    <ProjectReference Include="..\T4Toolbox.VisualStudio.Editor\T4Toolbox.VisualStudio.Editor.csproj">
-      <Project>{FDE953D3-AD27-4398-8EF4-293C0CEBDC3E}</Project>
-      <Name>T4Toolbox.VisualStudio.Editor</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-    <ProjectReference Include="..\T4Toolbox.VisualStudio.ItemTemplates\T4Toolbox.VisualStudio.ItemTemplates.csproj">
-      <Project>{ea04b345-97be-4a49-9c9c-3ebd4f5d2250}</Project>
-      <Name>T4Toolbox.VisualStudio.ItemTemplates</Name>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-    <ProjectReference Include="..\T4Toolbox.VisualStudio\T4Toolbox.VisualStudio.csproj">
-      <Project>{1e1e9161-cbe4-4538-928c-539aa5e70153}</Project>
-      <Name>T4Toolbox.VisualStudio</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bPkgdefProjectOutputGroup%3bBuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
-    </ProjectReference>
-    <ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj">
-      <Project>{682e771a-76f7-4972-bbdc-1250b67f399b}</Project>
-      <Name>T4Toolbox</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
+    <ProjectReference Include="..\T4Toolbox.DirectiveProcessors\T4Toolbox.DirectiveProcessors.csproj" />
+    <ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
+    <ProjectReference Include="..\T4Toolbox.VisualStudio.Editor\T4Toolbox.VisualStudio.Editor.csproj" />
+    <ProjectReference Include="..\T4Toolbox.VisualStudio.ItemTemplates\T4Toolbox.VisualStudio.ItemTemplates.csproj" />
+    <ProjectReference Include="..\T4Toolbox.VisualStudio\T4Toolbox.VisualStudio.csproj" />
+    <ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DarkTheme.pkgdef">
@@ -75,8 +44,4 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" />
-  <!-- Used by the Version attribute in the source.extension.manifest -->
-  <Target Name="GetPackageVersion" Outputs="$(PackageVersion)" />
 </Project>

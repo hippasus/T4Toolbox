@@ -7,22 +7,7 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-#if DEBUG
-[assembly: AssemblyConfiguration("Debug")]
-#else
-[assembly: AssemblyConfiguration("Release")]
-#endif 
-
-[assembly: AssemblyProduct(T4Toolbox.AssemblyInfo.Product)]
-[assembly: AssemblyDescription(T4Toolbox.AssemblyInfo.Description)]
-[assembly: AssemblyCompany("Oleg Sych")]
-[assembly: AssemblyCopyright("Copyright © Oleg Sych. All Rights Reserved.")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion(T4Toolbox.AssemblyInfo.Version)]
-[assembly: AssemblyFileVersion(T4Toolbox.AssemblyInfo.Version)]
 [assembly: ComVisible(false)]
-[assembly: NeutralResourcesLanguage("en-US")]
 
 // Allow all projects in this solution to access each-other's internals by default. 
 // In many instances, we need this to enable testing as well as to access constants 
