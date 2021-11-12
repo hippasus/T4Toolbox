@@ -1,15 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Company>Oleg Sych</Company>
-    <Product>T4Toolbox.AssemblyInfo.Product</Product>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Description>T4Toolbox.AssemblyInfo.Description</Description>
-    <Copyright>Copyright © Oleg Sych. All Rights Reserved.</Copyright>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <AssemblyVersion>T4Toolbox.AssemblyInfo.Version</AssemblyVersion>
-    <FileVersion>T4Toolbox.AssemblyInfo.Version</FileVersion>
-  </PropertyGroup>
   <Import Project="..\T4Toolbox.Tests.props" />
   <ItemGroup>
     <PackageReference Include="NSubstitute" Version="2.0.3" />

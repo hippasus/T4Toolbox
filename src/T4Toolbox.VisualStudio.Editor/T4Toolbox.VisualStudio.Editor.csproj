@@ -1,45 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Company>Oleg Sych</Company>
-    <Product>T4Toolbox.AssemblyInfo.Product</Product>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Description>T4Toolbox.AssemblyInfo.Description</Description>
-    <Copyright>Copyright © Oleg Sych. All Rights Reserved.</Copyright>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <AssemblyVersion>T4Toolbox.AssemblyInfo.Version</AssemblyVersion>
-    <FileVersion>T4Toolbox.AssemblyInfo.Version</FileVersion>
-  </PropertyGroup>
-  <Import Project="..\..\T4Toolbox.Common.props" />
-  <ItemGroup>
-    <PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.CoreUtility" />
-    <Reference Include="Microsoft.VisualStudio.Editor" />
-    <Reference Include="Microsoft.VisualStudio.Language" />
-    <Reference Include="Microsoft.VisualStudio.Language.Intellisense" />
-    <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
-    <Reference Include="Microsoft.VisualStudio.Shell.15.0" />
-    <Reference Include="Microsoft.VisualStudio.Shell.Framework" />
-    <!-- Explicitly specify version of Microsoft.VisualStudio.Shell.Immutable.10.0 because Version=15.0.0.0 doesn't define SVsServiceProvider -->
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
-    <Reference Include="Microsoft.VisualStudio.Text.Data" />
-    <Reference Include="Microsoft.VisualStudio.Text.Logic" />
-    <Reference Include="Microsoft.VisualStudio.Text.UI" />
-    <Reference Include="Microsoft.VisualStudio.Text.UI.Wpf" />
-    <Reference Include="Microsoft.VisualStudio.TextManager.Interop" />
-    <Reference Include="Microsoft.VisualStudio.Utilities" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
-    <ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-  </ItemGroup>
+	<Import Project="..\..\T4Toolbox.Common.props" />
+	<ItemGroup>
+		<Reference Include="PresentationCore" />
+		<Reference Include="System.ComponentModel.Composition" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.Editor" Version="16.10.230" />
+		<PackageReference Include="Microsoft.VisualStudio.Language" Version="16.10.230" />
+		<PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="16.10.230" />
+		<PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="16.10.31321.278" />
+		<PackageReference Include="Microsoft.VisualStudio.Shell.Framework" Version="16.10.31321.278" />
+		<PackageReference Include="Microsoft.VisualStudio.Text.UI.Wpf" Version="16.10.230" />
+		<PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
+		<ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+	</ItemGroup>
 </Project>

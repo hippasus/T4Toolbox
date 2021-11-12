@@ -1,23 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <PropertyGroup>
-    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <!-- VSSDK properties -->
-    <CreateVsixContainer>false</CreateVsixContainer>
-    <DeployExtension>false</DeployExtension>
-    <UseCodebase>true</UseCodebase>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
-  <Import Project="..\..\T4Toolbox.Common.props" />
-  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" />
-  <ItemGroup>
-    <PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="YaccLexTools" Version="0.2.2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="EnvDTE" />
+	<PropertyGroup>
+		<!-- VSSDK properties -->
+		<CreateVsixContainer>false</CreateVsixContainer>
+		<DeployExtension>false</DeployExtension>
+		<UseCodebase>true</UseCodebase>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+	<Import Project="..\..\T4Toolbox.Common.props" />
+	<Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" />
+	<ItemGroup>
+		<PackageReference Include="StyleCop.MSBuild" Version="5.0.0">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="YaccLexTools" Version="0.2.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<!--
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.15.3.DesignTime" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.15.0" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0" />
+    <Reference Include="VSLangProj" />-->
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Build" Version="16.10.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="16.10.31321.278" />
+		<PackageReference Include="Microsoft.VisualStudio.Shell.Framework" Version="16.10.31321.278" />
+		<PackageReference Include="Microsoft.VisualStudio.TemplateWizardInterface" Version="16.10.31320.204" />
+		<PackageReference Include="Microsoft.VisualStudio.TextTemplating.15.0" Version="16.10.31320.204" />
+		<PackageReference Include="Microsoft.VisualStudio.TextTemplating.VSHost.15.0" Version="16.10.31321.278" />
+		<Reference Include="PresentationFramework" />
+		<Reference Include="System.ComponentModel.Composition" />
+		<Reference Include="System.Windows.Forms" />
+		<!--<Reference Include="EnvDTE" />
     <Reference Include="EnvDTE80" />
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Framework" />
@@ -40,23 +58,23 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="VSLangProj" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\T4Toolbox.DirectiveProcessors\T4Toolbox.DirectiveProcessors.csproj" />
-    <ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
-    <ProjectReference Include="..\T4Toolbox.VisualStudio.Editor\T4Toolbox.VisualStudio.Editor.csproj" />
-    <ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-    <Compile Update="T4ToolboxOptionsPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <EmbeddedResource Update="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
+    <Reference Include="VSLangProj" />-->
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\T4Toolbox.DirectiveProcessors\T4Toolbox.DirectiveProcessors.csproj" />
+		<ProjectReference Include="..\T4Toolbox.TemplateAnalysis\T4Toolbox.TemplateAnalysis.csproj" />
+		<ProjectReference Include="..\T4Toolbox.VisualStudio.Editor\T4Toolbox.VisualStudio.Editor.csproj" />
+		<ProjectReference Include="..\T4Toolbox\T4Toolbox.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+		<Compile Update="T4ToolboxOptionsPage.cs">
+			<SubType>Component</SubType>
+		</Compile>
+		<EmbeddedResource Update="Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+	</ItemGroup>
 </Project>
